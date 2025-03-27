@@ -3,25 +3,25 @@ body {
     font-family: 'Poppins', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #000; /* Black background */
+    background-color: #000;
     color: #fff;
-    overflow-x: hidden; /* Prevent horizontal scroll */
+    overflow-x: hidden;
 }
 
 a {
-    color: #ff8c00; /* A vibrant Orange */
+    color: #ff8c00;
     text-decoration: none;
     transition: color 0.3s ease;
 }
 
 a:hover {
-    color: #ff4500; /* Darker orange on hover */
-    text-decoration: none; /* Removed underline */
+    color: #ff4500;
+    text-decoration: none;
 }
 
 /* Header/Navigation */
 header {
-    background: linear-gradient(to right, #000, #222); /* Black gradient */
+    background: linear-gradient(to right, #000, #222);
     color: #fff;
     padding: 1rem 0;
     position: sticky;
@@ -44,9 +44,18 @@ nav .logo {
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 1px;
-    color: #fff; /* White Logo */
+    color: #fff;
 }
 
+/* Mobile Menu Toggle Button */
+.menu-toggle {
+    display: none; /* Hide by default */
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #fff;
+}
+
+/* Navigation Links */
 nav ul {
     list-style: none;
     display: flex;
@@ -62,7 +71,7 @@ nav ul li a {
     color: #fff;
     padding: 0.75rem 1.25rem;
     border-radius: 25px;
-    background-color: rgba(255, 255, 255, 0.1); /* Slightly transparent white */
+    background-color: rgba(255, 255, 255, 0.1);
     transition: background-color 0.3s ease;
 }
 
@@ -73,12 +82,12 @@ nav ul li a:hover {
 
 /* Hero Section */
 .hero {
-     background: linear-gradient(to bottom, #1a1a1a, #000); /* Darker Gradient */
+    background: linear-gradient(to bottom, #1a1a1a, #000);
     padding: 6rem 0;
     text-align: center;
     color: #fff;
-    overflow: hidden; /* Hide any overflowing shapes */
-    position: relative; /* For absolute positioning of shapes */
+    overflow: hidden;
+    position: relative;
 }
 
 .hero::before {
@@ -99,10 +108,10 @@ nav ul li a:hover {
 }
 
 .hero img {
-    width: 150px;  /* Set width */
-    height: 150px; /* Set height to match width */
-    object-fit: cover; /* Ensure the image fits properly */
-    border-radius: 10px; /* Optional: slightly rounded corners */
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 10px;
     margin-bottom: 1rem;
     box-shadow: 0 4px 8px rgba(255, 255, 255, 0.2);
 }
@@ -155,7 +164,7 @@ nav ul li a:hover {
     padding: 0 2rem;
     font-size: 1.1rem;
     line-height: 1.6;
-    color: #fff; /* Made Text White*/
+    color: #fff;
 }
 
 /* Skills Section */
@@ -205,12 +214,12 @@ nav ul li a:hover {
 .skill h3 {
     font-size: 1.5rem;
     margin-bottom: 0.5rem;
-    color: #fff; /* White skill name */
+    color: #fff;
 }
 
 .skill p {
     font-size: 1rem;
-    color: #ddd; /* Lighter skill description */
+    color: #ddd;
 }
 
 /* Projects Section */
@@ -254,13 +263,13 @@ nav ul li a:hover {
     width: 100%;
     border-radius: 8px;
     margin-bottom: 0.75rem;
-    box-shadow: 0 2px 5px rgba(255, 255, 255, 0.1); /* White image shadow */
+    box-shadow: 0 2px 5px rgba(255, 255, 255, 0.1);
 }
 
 .project h3 {
     font-size: 1.4rem;
     margin-bottom: 0.5rem;
-    color: #fff; /* White Project title */
+    color: #fff;
 }
 
 .project p {
@@ -309,7 +318,7 @@ nav ul li a:hover {
 .education-item h3 {
     font-size: 1.6rem;
     margin-bottom: 0.5rem;
-    color: #fff; /* White Education title */
+    color: #fff;
 }
 
 .education-item p {
@@ -399,40 +408,43 @@ footer {
 
 /* Responsive Design */
 @media (max-width: 768px) {
-    nav {
-        flex-direction: column;
-        align-items: flex-start;
+
+    /* Show Mobile Menu Toggle Button */
+    .menu-toggle {
+        display: block;
     }
 
+    /* Hide Navigation Links By Default */
     nav ul {
-        margin-top: 1rem;
+        display: none;
         flex-direction: column;
+        position: absolute;
+        top: 60px; /* Adjust based on header height */
+        left: 0;
+        width: 100%;
+        background: #222; /* Dark background */
+        text-align: center;
+        box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
     }
 
+    /* Style Navigation Links for Mobile */
     nav ul li {
-        margin-left: 0;
-        margin-bottom: 0.5rem;
+        margin: 0;
+        padding: 1rem 0;
+        border-bottom: 1px solid #333;
     }
 
-    .contact-container {
-        flex-direction: column;
-    }
-
-    .contact-info,
-    .contact-form {
+    nav ul li a {
+        display: block;
         width: 100%;
-        margin-bottom: 1rem;
+        padding: 1rem;
+        box-sizing: border-box;
     }
 
-    .skills-container .skill,
-    .projects-container .project {
-        width: 100%;
+    /* Show Navigation Links when menu is toggled */
+    nav ul.active {
+        display: flex;
     }
-
-    .hero img {
-        width: 150px;
-    }
-@media (max-width: 768px) {
     nav {
         flex-direction: column;
         align-items: center;
