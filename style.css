@@ -1,11 +1,14 @@
-/* General Styles */
 body {
     font-family: 'Poppins', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #000;
+    background-color: #000; /*Fallback*/
     color: #fff;
     overflow-x: hidden;
+    /* Transparent geometric background */
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cdefs%3E%3ClinearGradient id='gradient' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%23222222'/%3E%3Cstop offset='100%25' stop-color='%23000000'/%3E%3C/linearGradient%3E%3Cpattern id='geometric' width='20' height='20' patternUnits='userSpaceOnUse'%3E%3Crect width='20' height='20' fill='url(%23gradient)'/%3E%3Cpath d='M0,0 L10,10 L0,20 Z M20,0 L10,10 L20,20 Z' fill='%23111111'/%3E%3C/pattern%3E%3C/defs%3E%3Crect width='100%25' height='100%25' fill='url(%23geometric)'/%3E%3C/svg%3E"); /* Generate geometric pattern */
+    background-size: cover; /* Cover entire background */
+    background-attachment: fixed;
 }
 
 a {
@@ -21,13 +24,14 @@ a:hover {
 
 /* Header/Navigation */
 header {
-    background: linear-gradient(to right, #000, #222);
+    background: rgba(0, 0, 0, 0.7); /* Transparent background */
     color: #fff;
     padding: 1rem 0;
     position: sticky;
     top: 0;
     z-index: 100;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(5px); /* Add blur effect */
 }
 
 nav {
@@ -82,12 +86,13 @@ nav ul li a:hover {
 
 /* Hero Section */
 .hero {
-    background: linear-gradient(to bottom, #1a1a1a, #000);
+    background: rgba(26, 26, 26, 0.7); /* Transparent background */
     padding: 6rem 0;
     text-align: center;
     color: #fff;
     overflow: hidden;
     position: relative;
+    backdrop-filter: blur(5px); /* Add blur effect */
 }
 
 .hero::before {
@@ -149,7 +154,8 @@ nav ul li a:hover {
 .about {
     padding: 6rem 0;
     text-align: center;
-    background-color: #111;
+    background: rgba(17, 17, 17, 0.7); /* Transparent background */
+    backdrop-filter: blur(5px); /* Add blur effect */
 }
 
 .about h2 {
@@ -169,10 +175,11 @@ nav ul li a:hover {
 
 /* Skills Section */
 .skills {
-    background-color: #000;
+    background: rgba(0, 0, 0, 0.7); /* Transparent background */
     padding: 6rem 0;
     text-align: center;
     box-shadow: 0px -5px 15px rgba(0, 0, 0, 0.05);
+    backdrop-filter: blur(5px); /* Add blur effect */
 }
 
 .skills h2 {
@@ -226,7 +233,8 @@ nav ul li a:hover {
 .projects {
     padding: 6rem 0;
     text-align: center;
-    background-color: #111;
+    background: rgba(17, 17, 17, 0.7); /* Transparent background */
+    backdrop-filter: blur(5px); /* Add blur effect */
 }
 
 .projects h2 {
@@ -290,9 +298,10 @@ nav ul li a:hover {
 
 /* Education Section */
 .education {
-    background-color: #000;
+    background: rgba(0, 0, 0, 0.7); /* Transparent background */
     padding: 6rem 0;
     text-align: center;
+    backdrop-filter: blur(5px); /* Add blur effect */
 }
 
 .education h2 {
@@ -330,7 +339,8 @@ nav ul li a:hover {
 .contact {
     padding: 6rem 0;
     text-align: center;
-    background-color: #111;
+    background: rgba(17, 17, 17, 0.7); /* Transparent background */
+    backdrop-filter: blur(5px); /* Add blur effect */
 }
 
 .contact h2 {
@@ -399,22 +409,23 @@ nav ul li a:hover {
 
 /* Footer */
 footer {
-    background-color: #000;
+    background: rgba(0, 0, 0, 0.7); /* Transparent background */
     color: #fff;
     text-align: center;
     padding: 1.5rem 0;
     font-size: 1rem;
+    backdrop-filter: blur(5px); /* Add blur effect */
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
 
-    /* Show Mobile Menu Toggle Button */
+    /* Mobile Menu Toggle Button */
     .menu-toggle {
         display: block;
     }
 
-    /* Hide Navigation Links By Default */
+    /* Hide Navigation */
     nav ul {
         display: none;
         flex-direction: column;
@@ -427,7 +438,7 @@ footer {
         box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
     }
 
-    /* Style Navigation Links for Mobile */
+    /* Style Navigation */
     nav ul li {
         margin: 0;
         padding: 1rem 0;
@@ -441,7 +452,7 @@ footer {
         box-sizing: border-box;
     }
 
-    /* Show Navigation Links when menu is toggled */
+    /* Show Navigation  */
     nav ul.active {
         display: flex;
     }
@@ -473,5 +484,11 @@ footer {
     .project, .skill, .education-item {
         width: 90%;
         margin: auto;
+    }
+
+    .contact-info,
+    .contact-form {
+        width: 90%;
+        margin-bottom: 1rem;
     }
 }
