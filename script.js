@@ -14,6 +14,9 @@ document.addEventListener('DOMContentLoaded', function () {
                 });
             }
             // Close menu on click (if open)
+            const menuToggle = document.querySelector('.menu-toggle'); // Get menuToggle here
+            const navLinks = document.querySelector('.nav-links'); // Get navLinks here
+
             if (menuToggle.classList.contains('active')) {
                 navLinks.classList.remove('active');
                 menuToggle.classList.remove('active');
