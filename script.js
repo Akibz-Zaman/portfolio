@@ -1,5 +1,4 @@
 document.addEventListener('DOMContentLoaded', function () {
-    // Smooth scrolling to section on click
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
@@ -13,9 +12,8 @@ document.addEventListener('DOMContentLoaded', function () {
                     behavior: 'smooth'
                 });
             }
-            // Close menu on click (if open)
-            const menuToggle = document.querySelector('.menu-toggle'); // Get menuToggle here
-            const navLinks = document.querySelector('.nav-links'); // Get navLinks here
+            const menuToggle = document.querySelector('.menu-toggle'); 
+            const navLinks = document.querySelector('.nav-links'); 
 
             if (menuToggle.classList.contains('active')) {
                 navLinks.classList.remove('active');
@@ -24,12 +22,12 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 
-    // Mobile Menu Toggle
+   
     const menuToggle = document.querySelector('.menu-toggle');
     const navLinks = document.querySelector('.nav-links');
 
     menuToggle.addEventListener('click', function () {
         navLinks.classList.toggle('active');
-        menuToggle.classList.toggle('active'); // Add this line
+        menuToggle.classList.toggle('active'); 
     });
 });
